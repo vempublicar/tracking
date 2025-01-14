@@ -4,6 +4,19 @@ date_default_timezone_set('America/Sao_Paulo');
 include_once "conn/connect.php";
 include_once "function/tools.php";
 
+try {
+    $dsn = "mysql:host=auth-db1184.hstgr.io;dbname=u821650166_dataTracking;charset=utf8mb4";
+    $username = "u821650166_noreply";
+    $password = "Henrique**251251";
+
+    $pdo = new PDO($dsn, $username, $password);
+    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+    echo "Conexão bem-sucedida!";
+} catch (PDOException $e) {
+    echo "Erro ao conectar ao banco de dados: " . $e->getMessage();
+}
+
 ?>
 
 <?php
