@@ -23,7 +23,7 @@ var url = idCliente+'#'+campanha+'#'+log_campanha+'#'+log_ultimo;
 var e = btoa(url.split("#"));
 
 ifrm = document.createElement("IFRAME");
-ifrm.setAttribute("src", "https://vf.app.br/track/"+e+"");
+ifrm.setAttribute("src", "https://tracking.vempublicar.com/track/"+e+"");
 ifrm.setAttribute("style", "height:50px;width:100%;background:#fff;opacity: 0.6;");
 document.body.appendChild(ifrm);
 
