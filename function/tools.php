@@ -11,7 +11,7 @@
 			$c['camp_ultima'] = $ultimaCampanha;
 			$c['ip_track'] = $keyTrack;
 			$c['data_track'] = $data;
-			$c['hora_track'] = $hora;
+			$c['hora_track'] = date("H:i:s");
 
 			$tabela = 'vf_tracking';
 				if($keyTrack == 'undefined' || $keyTrack == 'null' || $keyTrack == 'off'){
