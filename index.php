@@ -110,7 +110,7 @@ if($valida == "track" || $valida == "whats" || $valida == "rever"){
                 }
 
             }else{
-                print_r($info);
+                //print_r($info);
                 echo '<img style="height: 20px; position: absolute; left: 90%;" src="https://tracking.vempublicar.com/valido_track.png"></img>';
             }
              
