@@ -4,9 +4,7 @@ date_default_timezone_set('America/Sao_Paulo');
 include_once "conn/connect.php";
 include_once "function/tools.php";
 
-
 ?>
-
 <?php
  
 $url = $_GET['pg']; //RECEBE O VALOR DA URL PARA TRATAMENTO. Valores esperados [1] track/https://sitecliente.com/,C-XXXX... ou [2] C-XXXX.. (Id da campanha). Fora isso o sistema da exit.
@@ -134,8 +132,6 @@ if($valida == "track" || $valida == "whats" || $valida == "rever"){
         if($valida == 'whats'){ 
             header("location:".$info[0]);
         }else{
-            print_r ($dominioCliente);
-            print_r ($verificaCliente);
             echo '<img style="height: 20px; position: absolute; left: 90%;" src="https://tracking.vempublicar.com/invalido_no_track.png"></img>';
         }
     }
@@ -149,11 +145,8 @@ if($valida == "track" || $valida == "whats" || $valida == "rever"){
                 if($verifica[0] == 'meu_whatsapp'){
                     if(isset($verifica[1])){
                         $cliente = $verifica[1];
-
                             //busca a campanha                 
                             $caminho = consultaPainel($cliente);
-                            print_r($caminho);
-
                           //  print_r($caminho);
                                 if(isset($caminho) && $caminho > ""){
                                     $painelTrack = $caminho['business_code'];
@@ -168,17 +161,16 @@ if($valida == "track" || $valida == "whats" || $valida == "rever"){
                                     }
                                     $campanhaAntiga = 'null';
                                     $campanhaUltima = 'null';
-                                    $keyTrack = $data.$hora.rand(1,999999);
+                                    $keyTrack = rand(1,999999).$data.$hora;
                                     $retorno = salvarTrack($painelTrack, $gestorPainel, $dominio, $urlTrack, $campanhaAtual, $campanhaAntiga, $campanhaUltima, $keyTrack, $data, $hora);
-                                    echo $retorno;
                                     $destino = $caminho['business_whatsapp'];
-                                   //  header("location:".$destino);
+                                     header("location:".$destino);
                                 }else{
                                     if(isset($verifica[3])){
                                         if(is_numeric($verifica[3])){
-                                         //   header("location:https://api.whatsapp.com/send/?phone=".$verifica[3]);
+                                            header("location:https://api.whatsapp.com/send/?phone=".$verifica[3]);
                                         }else{
-                                          //  header("location:https://api.whatsapp.com/send/?phone=551922108117");
+                                            header("location:https://api.whatsapp.com/send/?phone=551922108117");
                                         }
                                     }
                                 }
