@@ -24,6 +24,6 @@ var e = btoa(url.split("#"));
 
 ifrm = document.createElement("IFRAME");
 ifrm.setAttribute("src", "https://vf.app.br/track/"+e+"");
-ifrm.setAttribute("style", "height:0px;width:100%;background:#fff;opacity: 0.6;");
+ifrm.setAttribute("style", "height:50px;width:100%;background:#fff;opacity: 0.6;");
 document.body.appendChild(ifrm);
 

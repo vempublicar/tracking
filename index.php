@@ -5,7 +5,7 @@ include_once "conn/connect.php";
 include_once "function/tools.php";
 
 ?>
-Hellow World!
+
 <?php
  
 $url = $_GET['pg']; //RECEBE O VALOR DA URL PARA TRATAMENTO. Valores esperados [1] track/https://sitecliente.com/,C-XXXX... ou [2] C-XXXX.. (Id da campanha). Fora isso o sistema da exit.
