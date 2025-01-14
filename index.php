@@ -54,7 +54,7 @@ if($valida == "track" || $valida == "whats" || $valida == "rever"){
         $urlTrack = explode("?",$info[0]);
         $urlTrack = $urlTrack[0];
         $data = date("Y-m-d");
-        $hora = date("H");
+        $hora = date("H:i:s");
 
         $isbase = isbase64($info[1]);
         
@@ -140,8 +140,8 @@ if($valida == "track" || $valida == "whats" || $valida == "rever"){
     if($_GET['pg'] > ""){
         $verifica = explode("/",$_GET['pg']);
         $data = date("Y-m-d");
-        $hora = date("H");
-                print_r($verifica);
+        $hora = date("H:i:s");
+               // print_r($verifica);
                 if($verifica[0] == 'meu_whatsapp'){
                     if(isset($verifica[1])){
                         $cliente = $verifica[1];
