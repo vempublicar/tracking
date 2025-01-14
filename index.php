@@ -111,7 +111,7 @@ if($valida == "track" || $valida == "whats" || $valida == "rever"){
                 }
 
             }else{
-                echo '<img style="height: 20px; position: absolute; left: 90%;" src="https://vf.app.br/valido_track.png"></img>';
+                echo '<img style="height: 20px; position: absolute; left: 90%;" src="https://tracking.vempublicar.com/valido_track.png"></img>';
             }
              
          }else{
@@ -126,14 +126,14 @@ if($valida == "track" || $valida == "whats" || $valida == "rever"){
                 }
                 
             }else{
-                echo '<img style="height: 20px; position: absolute; left: 90%;" src="https://vf.app.br/valido_no_track.png"></img>';
+                echo '<img style="height: 20px; position: absolute; left: 90%;" src="https://tracking.vempublicar.com/valido_no_track.png"></img>';
             }
          }
     }else{
         if($valida == 'whats'){ 
             header("location:".$info[0]);
         }else{
-            echo '<img style="height: 20px; position: absolute; left: 90%;" src="https://vf.app.br/invalido_no_track.png"></img>';
+            echo '<img style="height: 20px; position: absolute; left: 90%;" src="https://tracking.vempublicar.com/invalido_no_track.png"></img>';
         }
     }
 
