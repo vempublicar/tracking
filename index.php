@@ -4,23 +4,6 @@ date_default_timezone_set('America/Sao_Paulo');
 include_once "conn/connect.php";
 include_once "function/tools.php";
 
-try {
-    $dsn = "mysql:host=localhost;dbname=u821650166_dataTracking;charset=utf8mb4"; // Alterado para localhost
-    $username = "u821650166_noreply"; // Usuário do banco
-    $password = "Henrique**251251"; // Senha do banco
-
-    // Cria a conexão PDO
-    $pdo = new PDO($dsn, $username, $password);
-
-    // Configura o modo de erro para exceções
-    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-
-    // Mensagem de sucesso
-    echo "Conexão bem-sucedida!";
-} catch (PDOException $e) {
-    // Mensagem de erro em caso de falha
-    echo "Erro ao conectar ao banco de dados: " . $e->getMessage();
-}
 
 ?>
 

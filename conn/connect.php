@@ -2,27 +2,26 @@
 function db_connect()
 {
     try {
-        $dbhost = 'auth-db1184.hstgr.io'; // Host do banco de dados
-        $dbname = 'u821650166_dataTracking'; // Nome do banco de dados
-        $charset = 'utf8mb4'; // Conjunto de caracteres recomendado
-        $username = 'u821650166_noreply'; // Usuário do banco de dados
-        $password = 'Henrique**251251'; // Senha do banco de dados
+        $dbhost = 'localhost'; // Alterado para localhost
+        $dbname = 'u821650166_dataTracking'; // Nome do banco
+        $charset = 'utf8mb4'; // Conjunto de caracteres
+        $username = 'u821650166_noreply'; // Usuário do banco
+        $password = 'Henrique**251251'; // Senha do banco
 
-        // Montando a DSN para conexão PDO
+        // Configura a string de conexão DSN
         $dsn = "mysql:host={$dbhost};dbname={$dbname};charset={$charset}";
-        
-        // Criando a conexão PDO
+
+        // Cria a conexão PDO
         $pdo = new PDO($dsn, $username, $password);
 
-        // Configurando o modo de erro para exceções
+        // Configura o modo de erro para exceções
         $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
         return $pdo;
 
-    } catch (Exception $e) {
-        // Em caso de erro, você pode exibir uma mensagem personalizada ou redirecionar
+    } catch (PDOException $e) {
+        // Exibe mensagem de erro em caso de falha na conexão
         die('Erro ao conectar ao banco de dados: ' . $e->getMessage());
-        // header('location:https://vemfacil.com/v_erro&tipo=access');
     }
 }
 ?>
