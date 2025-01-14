@@ -134,6 +134,8 @@ if($valida == "track" || $valida == "whats" || $valida == "rever"){
         if($valida == 'whats'){ 
             header("location:".$info[0]);
         }else{
+            print_r ($dominioCliente);
+            print_r ($verificaCliente);
             echo '<img style="height: 20px; position: absolute; left: 90%;" src="https://tracking.vempublicar.com/invalido_no_track.png"></img>';
         }
     }
